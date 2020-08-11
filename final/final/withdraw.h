@@ -36,7 +36,7 @@ namespace final {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label2;
+
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  w_amount;
@@ -45,6 +45,8 @@ namespace final {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
+	private: System::Diagnostics::PerformanceCounter^  performanceCounter1;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 	protected:
 
@@ -62,7 +64,6 @@ namespace final {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(withdraw::typeid));
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->w_amount = (gcnew System::Windows::Forms::TextBox());
@@ -70,21 +71,11 @@ namespace final {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->performanceCounter1 = (gcnew System::Diagnostics::PerformanceCounter());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->performanceCounter1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(392, 18);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(177, 27);
-			this->label2->TabIndex = 6;
-			this->label2->Text = L"CASH CORNER";
 			// 
 			// label6
 			// 
@@ -94,7 +85,7 @@ namespace final {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
-			this->label6->Location = System::Drawing::Point(-1, 72);
+			this->label6->Location = System::Drawing::Point(2, 123);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(307, 22);
 			this->label6->TabIndex = 12;
@@ -108,7 +99,7 @@ namespace final {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(12, 224);
+			this->label1->Location = System::Drawing::Point(92, 261);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(324, 22);
 			this->label1->TabIndex = 13;
@@ -116,7 +107,7 @@ namespace final {
 			// 
 			// w_amount
 			// 
-			this->w_amount->Location = System::Drawing::Point(342, 223);
+			this->w_amount->Location = System::Drawing::Point(422, 260);
 			this->w_amount->Name = L"w_amount";
 			this->w_amount->Size = System::Drawing::Size(216, 22);
 			this->w_amount->TabIndex = 14;
@@ -127,7 +118,7 @@ namespace final {
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->CausesValidation = false;
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(406, 269);
+			this->button1->Location = System::Drawing::Point(486, 306);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(152, 38);
 			this->button1->TabIndex = 15;
@@ -139,7 +130,7 @@ namespace final {
 			// 
 			this->button2->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Location = System::Drawing::Point(406, 313);
+			this->button2->Location = System::Drawing::Point(486, 350);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 27);
 			this->button2->TabIndex = 16;
@@ -151,7 +142,7 @@ namespace final {
 			// 
 			this->button3->BackColor = System::Drawing::Color::IndianRed;
 			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Location = System::Drawing::Point(474, 458);
+			this->button3->Location = System::Drawing::Point(625, 546);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(84, 33);
 			this->button3->TabIndex = 17;
@@ -163,12 +154,23 @@ namespace final {
 			// 
 			this->button4->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->Location = System::Drawing::Point(370, 458);
+			this->button4->Location = System::Drawing::Point(521, 546);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(84, 33);
 			this->button4->TabIndex = 18;
 			this->button4->Text = L" BACK";
 			this->button4->UseVisualStyleBackColor = false;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(521, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(188, 92);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 19;
+			this->pictureBox1->TabStop = false;
 			// 
 			// withdraw
 			// 
@@ -176,7 +178,8 @@ namespace final {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(582, 503);
+			this->ClientSize = System::Drawing::Size(732, 603);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -184,11 +187,12 @@ namespace final {
 			this->Controls->Add(this->w_amount);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label2);
 			this->Name = L"withdraw";
 			this->Text = L"withdraw";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &withdraw::withdraw_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &withdraw::withdraw_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->performanceCounter1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

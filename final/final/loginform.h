@@ -48,10 +48,11 @@ namespace final {
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Label^  label1;
 
-	private: System::Windows::Forms::Label^  label2;
+
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label3;
+
 
 	protected:
 
@@ -77,7 +78,6 @@ namespace final {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -155,7 +155,7 @@ namespace final {
 			this->panel1->Controls->Add(this->username_lbl);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->password_txt);
-			this->panel1->Location = System::Drawing::Point(182, 143);
+			this->panel1->Location = System::Drawing::Point(272, 193);
 			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(197, 222);
@@ -189,27 +189,12 @@ namespace final {
 			this->label1->Text = L"User Log in ";
 			this->label1->Click += gcnew System::EventHandler(this, &loginform::label1_Click);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(392, 18);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(177, 27);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"CASH CORNER";
-			this->label2->Click += gcnew System::EventHandler(this, &loginform::label2_Click);
-			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox2->Location = System::Drawing::Point(250, 114);
+			this->pictureBox2->Location = System::Drawing::Point(340, 164);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(51, 52);
 			this->pictureBox2->TabIndex = 11;
@@ -217,11 +202,11 @@ namespace final {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(196, 391);
+			this->button2->Location = System::Drawing::Point(314, 441);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(156, 32);
+			this->button2->Size = System::Drawing::Size(128, 32);
 			this->button2->TabIndex = 12;
-			this->button2->Text = L"Create an account";
+			this->button2->Text = L"SIGN UP";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &loginform::button2_Click);
 			// 
@@ -232,7 +217,7 @@ namespace final {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(269, 369);
+			this->label3->Location = System::Drawing::Point(359, 419);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(32, 19);
@@ -246,11 +231,10 @@ namespace final {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(582, 503);
+			this->ClientSize = System::Drawing::Size(732, 603);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"loginform";
 			this->Text = L"loginform";
@@ -270,7 +254,7 @@ namespace final {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ constring = L"datasource=127.0.0.1; port=3306; username=root; password=Paper";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select *from foratm.information where user_id='"+ this->username_txt->Text+"'and password='"+this->password_txt->Text+"';",conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select *from foratm.atm where user_id='"+ this->username_txt->Text+"'and password='"+this->password_txt->Text+"';",conDataBase);
 		MySqlDataReader^myReader;
 		try
 		{
@@ -286,11 +270,6 @@ namespace final {
 				this->Hide();
 				transaction^ ta = gcnew transaction();
 				ta->ShowDialog();
-			}
-			else if (count > 1)
-			{
-				MessageBox::Show("Duplicate username and password.");
-				
 			}
 			else
 				MessageBox::Show("Username and password is incorrect. Please try again.");

@@ -138,6 +138,7 @@
     <ClCompile Include="change.cpp" />
     <ClCompile Include="information.cpp" />
     <ClCompile Include="loginform.cpp" />
+    <ClCompile Include="password.cpp" />
     <ClCompile Include="receipt.cpp" />
     <ClCompile Include="signin.cpp" />
     <ClCompile Include="stdAfx.cpp" />
@@ -155,6 +156,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="loginform.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="password.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="receipt.h">
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loginform.resx">
       <DependentUpon>loginform.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="password.resx">
+      <DependentUpon>password.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="receipt.resx">
       <DependentUpon>receipt.h</DependentUpon>

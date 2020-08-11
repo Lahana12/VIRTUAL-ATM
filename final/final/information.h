@@ -34,7 +34,7 @@ namespace final {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label2;
+
 	protected:
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Button^  button4;
@@ -69,7 +69,6 @@ namespace final {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(information::typeid));
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -91,20 +90,6 @@ namespace final {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(394, 17);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(177, 27);
-			this->label2->TabIndex = 19;
-			this->label2->Text = L"CASH CORNER";
-			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
@@ -123,7 +108,7 @@ namespace final {
 			// 
 			this->button4->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->Location = System::Drawing::Point(383, 452);
+			this->button4->Location = System::Drawing::Point(532, 549);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(84, 33);
 			this->button4->TabIndex = 24;
@@ -134,7 +119,7 @@ namespace final {
 			// 
 			this->button3->BackColor = System::Drawing::Color::IndianRed;
 			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Location = System::Drawing::Point(487, 452);
+			this->button3->Location = System::Drawing::Point(636, 549);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(84, 33);
 			this->button3->TabIndex = 23;
@@ -145,7 +130,7 @@ namespace final {
 			// pictureBox1
 			// 
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->Location = System::Drawing::Point(151, 115);
+			this->pictureBox1->Location = System::Drawing::Point(232, 158);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(302, 311);
 			this->pictureBox1->TabIndex = 25;
@@ -158,7 +143,7 @@ namespace final {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(165, 132);
+			this->label1->Location = System::Drawing::Point(246, 175);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(73, 19);
 			this->label1->TabIndex = 26;
@@ -171,7 +156,7 @@ namespace final {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Black;
-			this->label3->Location = System::Drawing::Point(165, 218);
+			this->label3->Location = System::Drawing::Point(246, 261);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(91, 19);
 			this->label3->TabIndex = 27;
@@ -185,7 +170,7 @@ namespace final {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(165, 176);
+			this->label4->Location = System::Drawing::Point(246, 219);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(126, 19);
 			this->label4->TabIndex = 28;
@@ -198,7 +183,7 @@ namespace final {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Black;
-			this->label5->Location = System::Drawing::Point(169, 343);
+			this->label5->Location = System::Drawing::Point(250, 386);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(69, 19);
 			this->label5->TabIndex = 29;
@@ -211,7 +196,7 @@ namespace final {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::Black;
-			this->label7->Location = System::Drawing::Point(165, 302);
+			this->label7->Location = System::Drawing::Point(246, 345);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(104, 19);
 			this->label7->TabIndex = 30;
@@ -224,7 +209,7 @@ namespace final {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::Black;
-			this->label8->Location = System::Drawing::Point(165, 259);
+			this->label8->Location = System::Drawing::Point(246, 302);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(83, 19);
 			this->label8->TabIndex = 31;
@@ -238,7 +223,7 @@ namespace final {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::Black;
-			this->label9->Location = System::Drawing::Point(165, 385);
+			this->label9->Location = System::Drawing::Point(246, 428);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(100, 19);
 			this->label9->TabIndex = 32;
@@ -250,7 +235,7 @@ namespace final {
 			this->listBox1->ForeColor = System::Drawing::Color::Black;
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(309, 131);
+			this->listBox1->Location = System::Drawing::Point(390, 174);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(125, 20);
 			this->listBox1->TabIndex = 33;
@@ -261,7 +246,7 @@ namespace final {
 			this->listBox2->ForeColor = System::Drawing::Color::Black;
 			this->listBox2->FormattingEnabled = true;
 			this->listBox2->ItemHeight = 16;
-			this->listBox2->Location = System::Drawing::Point(309, 175);
+			this->listBox2->Location = System::Drawing::Point(390, 218);
 			this->listBox2->Name = L"listBox2";
 			this->listBox2->Size = System::Drawing::Size(125, 20);
 			this->listBox2->TabIndex = 34;
@@ -272,7 +257,7 @@ namespace final {
 			this->listBox3->ForeColor = System::Drawing::Color::Black;
 			this->listBox3->FormattingEnabled = true;
 			this->listBox3->ItemHeight = 16;
-			this->listBox3->Location = System::Drawing::Point(309, 218);
+			this->listBox3->Location = System::Drawing::Point(390, 261);
 			this->listBox3->Name = L"listBox3";
 			this->listBox3->Size = System::Drawing::Size(125, 20);
 			this->listBox3->TabIndex = 35;
@@ -283,7 +268,7 @@ namespace final {
 			this->listBox4->ForeColor = System::Drawing::Color::Black;
 			this->listBox4->FormattingEnabled = true;
 			this->listBox4->ItemHeight = 16;
-			this->listBox4->Location = System::Drawing::Point(309, 259);
+			this->listBox4->Location = System::Drawing::Point(390, 302);
 			this->listBox4->Name = L"listBox4";
 			this->listBox4->Size = System::Drawing::Size(125, 20);
 			this->listBox4->TabIndex = 36;
@@ -294,7 +279,7 @@ namespace final {
 			this->listBox5->ForeColor = System::Drawing::Color::Black;
 			this->listBox5->FormattingEnabled = true;
 			this->listBox5->ItemHeight = 16;
-			this->listBox5->Location = System::Drawing::Point(309, 302);
+			this->listBox5->Location = System::Drawing::Point(390, 345);
 			this->listBox5->Name = L"listBox5";
 			this->listBox5->Size = System::Drawing::Size(125, 20);
 			this->listBox5->TabIndex = 37;
@@ -305,7 +290,7 @@ namespace final {
 			this->listBox6->ForeColor = System::Drawing::Color::Black;
 			this->listBox6->FormattingEnabled = true;
 			this->listBox6->ItemHeight = 16;
-			this->listBox6->Location = System::Drawing::Point(309, 342);
+			this->listBox6->Location = System::Drawing::Point(390, 385);
 			this->listBox6->Name = L"listBox6";
 			this->listBox6->Size = System::Drawing::Size(125, 20);
 			this->listBox6->TabIndex = 38;
@@ -316,7 +301,7 @@ namespace final {
 			this->listBox7->ForeColor = System::Drawing::Color::Black;
 			this->listBox7->FormattingEnabled = true;
 			this->listBox7->ItemHeight = 16;
-			this->listBox7->Location = System::Drawing::Point(309, 385);
+			this->listBox7->Location = System::Drawing::Point(390, 428);
 			this->listBox7->Name = L"listBox7";
 			this->listBox7->Size = System::Drawing::Size(125, 20);
 			this->listBox7->TabIndex = 39;
@@ -327,7 +312,7 @@ namespace final {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(582, 503);
+			this->ClientSize = System::Drawing::Size(732, 603);
 			this->Controls->Add(this->listBox7);
 			this->Controls->Add(this->listBox6);
 			this->Controls->Add(this->listBox5);
@@ -346,7 +331,6 @@ namespace final {
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label2);
 			this->Name = L"information";
 			this->Text = L"information";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &information::information_FormClosing);
