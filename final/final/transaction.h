@@ -1,9 +1,10 @@
 #pragma once
+#include"string.h"
 #include "stdAfx.h"
-#include"withdraw.h"
-#include"balancecheck.h"
-#include"information.h"
-#include"change.h"
+#include "balancecheck.h"
+#include "information.h"
+#include "change.h"
+#include "withdraw.h"
 
 namespace final {
 
@@ -13,6 +14,7 @@ namespace final {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for transaction
@@ -20,12 +22,17 @@ namespace final {
 	public ref class transaction : public System::Windows::Forms::Form
 	{
 	public:
+		int userID;
 		transaction(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		transaction(int userId) {
+			InitializeComponent();
+			this->userID = userId;
 		}
 
 	protected:
@@ -271,25 +278,29 @@ namespace final {
 	}
 private: System::Void withdraw_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Hide();
+	// withdraw^ wd = gcnew withdraw(userID);
+	// wd->ShowDialog();
 	final::withdraw wd;
+	wd.userID = this->userID;
 	wd.ShowDialog();
 	this->Show();
 }
 private: System::Void balance_check_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Hide();
-	final::balancecheck bc;
-	bc.ShowDialog();
+	balancecheck^ bc = gcnew balancecheck(userID);
+	bc->ShowDialog();
 	this->Show();
 }
 private: System::Void pictureBox4_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Hide();
-	final::information in; 
-	in.ShowDialog();
+	information^ info = gcnew information(userID);
+	info->ShowDialog();
 	this->Show();
 }
 private: System::Void pictureBox3_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Hide();
 	final::change ch;
+	ch.userID = this->userID;
 	ch.ShowDialog();
 	this->Show();
 }
@@ -305,7 +316,7 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	Application::Exit();
 }
 private: System::Void transaction_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-	
+	Application::Exit();
 }
 };
 }

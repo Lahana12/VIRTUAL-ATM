@@ -1,6 +1,6 @@
 #pragma once
 #include "stdAfx.h"
-#include"receipt.h"
+#include "receipt.h"
 
 namespace final {
 
@@ -17,12 +17,18 @@ namespace final {
 	public ref class withdraw : public System::Windows::Forms::Form
 	{
 	public:
+		int userID;
 		withdraw(void)
 		{
 			InitializeComponent();
+			this->userID = 0;
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		withdraw(int userId) {
+			InitializeComponent();
+			this->userID = userId;
 		}
 
 	protected:
@@ -45,10 +51,8 @@ namespace final {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button4;
-	private: System::Diagnostics::PerformanceCounter^  performanceCounter1;
+	//private: System::Diagnostics::PerformanceCounter^  performanceCounter1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-
-	protected:
 
 	private:
 		/// <summary>
@@ -71,9 +75,7 @@ namespace final {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->performanceCounter1 = (gcnew System::Diagnostics::PerformanceCounter());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->performanceCounter1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -85,9 +87,10 @@ namespace final {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
-			this->label6->Location = System::Drawing::Point(2, 123);
+			this->label6->Location = System::Drawing::Point(2, 100);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(307, 22);
+			this->label6->Size = System::Drawing::Size(241, 19);
 			this->label6->TabIndex = 12;
 			this->label6->Text = L"Cash Withdrawal                                \r\n";
 			this->label6->Click += gcnew System::EventHandler(this, &withdraw::label6_Click);
@@ -99,18 +102,21 @@ namespace final {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(92, 261);
+			this->label1->Location = System::Drawing::Point(69, 212);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(324, 22);
+			this->label1->Size = System::Drawing::Size(249, 19);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Enter the amount you want to withdraw:";
 			// 
 			// w_amount
 			// 
-			this->w_amount->Location = System::Drawing::Point(422, 260);
+			this->w_amount->Location = System::Drawing::Point(316, 211);
+			this->w_amount->Margin = System::Windows::Forms::Padding(2);
 			this->w_amount->Name = L"w_amount";
-			this->w_amount->Size = System::Drawing::Size(216, 22);
+			this->w_amount->Size = System::Drawing::Size(163, 20);
 			this->w_amount->TabIndex = 14;
+			this->w_amount->TextChanged += gcnew System::EventHandler(this, &withdraw::w_amount_TextChanged);
 			// 
 			// button1
 			// 
@@ -118,9 +124,10 @@ namespace final {
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->CausesValidation = false;
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(486, 306);
+			this->button1->Location = System::Drawing::Point(364, 249);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(152, 38);
+			this->button1->Size = System::Drawing::Size(114, 31);
 			this->button1->TabIndex = 15;
 			this->button1->Text = L"WITHDRAW";
 			this->button1->UseVisualStyleBackColor = false;
@@ -130,9 +137,10 @@ namespace final {
 			// 
 			this->button2->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Location = System::Drawing::Point(486, 350);
+			this->button2->Location = System::Drawing::Point(364, 284);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(152, 27);
+			this->button2->Size = System::Drawing::Size(114, 22);
 			this->button2->TabIndex = 16;
 			this->button2->Text = L"Click here for receipt";
 			this->button2->UseVisualStyleBackColor = false;
@@ -142,9 +150,10 @@ namespace final {
 			// 
 			this->button3->BackColor = System::Drawing::Color::IndianRed;
 			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Location = System::Drawing::Point(625, 546);
+			this->button3->Location = System::Drawing::Point(469, 444);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(84, 33);
+			this->button3->Size = System::Drawing::Size(63, 27);
 			this->button3->TabIndex = 17;
 			this->button3->Text = L"EXIT";
 			this->button3->UseVisualStyleBackColor = false;
@@ -154,31 +163,34 @@ namespace final {
 			// 
 			this->button4->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->Location = System::Drawing::Point(521, 546);
+			this->button4->Location = System::Drawing::Point(391, 444);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(84, 33);
+			this->button4->Size = System::Drawing::Size(63, 27);
 			this->button4->TabIndex = 18;
 			this->button4->Text = L" BACK";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &withdraw::button4_Click);
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(521, 12);
+			this->pictureBox1->Location = System::Drawing::Point(399, 10);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(188, 92);
+			this->pictureBox1->Size = System::Drawing::Size(141, 75);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 19;
 			this->pictureBox1->TabStop = false;
 			// 
 			// withdraw
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(732, 603);
+			this->ClientSize = System::Drawing::Size(549, 490);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -187,11 +199,11 @@ namespace final {
 			this->Controls->Add(this->w_amount);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label6);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"withdraw";
 			this->Text = L"withdraw";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &withdraw::withdraw_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &withdraw::withdraw_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->performanceCounter1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -202,8 +214,8 @@ namespace final {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
-		final::receipt re;
-		re.ShowDialog();
+		receipt^ re = gcnew receipt(userID);
+		re->ShowDialog();
 		this->Show();
 	}
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -215,7 +227,11 @@ private: System::Void withdraw_FormClosing(System::Object^  sender, System::Wind
 private: System::Void withdraw_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+}
+private: System::Void w_amount_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
 }
 };
 }

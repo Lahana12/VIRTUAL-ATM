@@ -1,4 +1,5 @@
 #pragma once
+#include"string.h"
 
 
 namespace final {
@@ -10,13 +11,13 @@ namespace final {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
-
 	/// <summary>
 	/// Summary for balancecheck
 	/// </summary>
 	public ref class balancecheck : public System::Windows::Forms::Form
 	{
 	public:
+		int userID;
 		balancecheck(void)
 		{
 			InitializeComponent();
@@ -24,6 +25,11 @@ namespace final {
 			//TODO: Add the constructor code here
 			//
 		}
+		balancecheck(int userId) {
+			InitializeComponent();
+			this->userID = userId;
+		}
+
 
 	protected:
 		/// <summary>
@@ -126,6 +132,7 @@ namespace final {
 			// 
 			this->current->Location = System::Drawing::Point(372, 282);
 			this->current->Name = L"current";
+			this->current->ReadOnly = true;
 			this->current->Size = System::Drawing::Size(183, 22);
 			this->current->TabIndex = 25;
 			this->current->TextChanged += gcnew System::EventHandler(this, &balancecheck::current_TextChanged);
@@ -151,29 +158,45 @@ namespace final {
 
 		}
 #pragma endregion
-	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		Application::Exit();
-	}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	Application::Exit();
+}
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+	this->Close();
 }
 private: System::Void balancecheck_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 	
 }
 private: System::Void balancecheck_Load(System::Object^  sender, System::EventArgs^  e) {
+	String^ constring = L"datasource=127.0.0.1; database=foratm; port=3306; username=root; password=Paper";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from atm where user_id=" + this->userID + ";", conDataBase);
+	MySqlDataReader^myReader;
+
+	try
+	{
+		conDataBase->Open();
+		myReader = cmdDataBase->ExecuteReader();
+		if (myReader->Read()) {
+			if (myReader->HasRows) this->current->Text = "" + myReader->GetInt32(6);
+			else MessageBox::Show("No data found.");
+		}
+	}
+	catch (Exception^ex)
+	{
+		MessageBox::Show(ex->Message);
+	}
+
+
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void balance_check_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
 }
-	private: System::Void richTextBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	}
+private: System::Void richTextBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 private: System::Void current_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	String^ constring = L"datasource=127.0.0.1; database=foratm; port=3306; username=root; password=Paper";
-	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select* from where atm.user_id'" + this->pw->Text + "' where atm.user_id=" + this->userID + ";", conDataBase);
-
 }
 };
 }

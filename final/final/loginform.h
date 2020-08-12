@@ -2,6 +2,7 @@
 #include "stdAfx.h"
 #include"transaction.h"
 #include"signin.h"
+#include"string.h"
 
 namespace final {
 
@@ -19,6 +20,7 @@ namespace final {
 	public ref class loginform : public System::Windows::Forms::Form
 	{
 	public:
+		int userID;
 		loginform(void)
 		{
 			InitializeComponent();
@@ -26,6 +28,7 @@ namespace final {
 			//TODO: Add the constructor code here
 			//
 		}
+	
 
 	protected:
 		/// <summary>
@@ -52,6 +55,7 @@ namespace final {
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
 
 
 	protected:
@@ -81,9 +85,11 @@ namespace final {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -206,7 +212,7 @@ namespace final {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(128, 32);
 			this->button2->TabIndex = 12;
-			this->button2->Text = L"SIGN UP";
+			this->button2->Text = L"SIGN IN";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &loginform::button2_Click);
 			// 
@@ -225,6 +231,17 @@ namespace final {
 			this->label3->Text = L"OR";
 			this->label3->Click += gcnew System::EventHandler(this, &loginform::label3_Click);
 			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(532, 12);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(188, 92);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 42;
+			this->pictureBox3->TabStop = false;
+			// 
 			// loginform
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -232,6 +249,7 @@ namespace final {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(732, 603);
+			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->pictureBox2);
@@ -244,6 +262,7 @@ namespace final {
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -254,7 +273,8 @@ namespace final {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ constring = L"datasource=127.0.0.1; port=3306; username=root; password=Paper";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select *from foratm.atm where user_id='"+ this->username_txt->Text+"'and password='"+this->password_txt->Text+"';",conDataBase);
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select *from foratm.atm where user_id="+ this->username_txt->Text+" and password='"+this->password_txt->Text+"';",conDataBase);
+		this->userID = int::Parse(this->username_txt->Text);
 		MySqlDataReader^myReader;
 		try
 		{
@@ -268,7 +288,7 @@ namespace final {
 			if (count == 1) {
 				MessageBox::Show("Username and password is correct.");
 				this->Hide();
-				transaction^ ta = gcnew transaction();
+				transaction^ ta = gcnew transaction(userID);
 				ta->ShowDialog();
 			}
 			else
