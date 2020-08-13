@@ -17,16 +17,33 @@ namespace final {
 	{
 	public:
 		int userID;
+	private: System::Windows::Forms::Label^  label3;
+	public:
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::TextBox^  datet;
+	private: System::Windows::Forms::TextBox^  box2;
+	private: System::Windows::Forms::TextBox^  box3;
+	private: System::Windows::Forms::TextBox^  box6;
+
+
+
+
+	private: System::Windows::Forms::Label^  label1;
+			 int transaction_amt;
 		receipt(void)
 		{
 			InitializeComponent();
+
+			DateTime datetime = DateTime::Now;
+			this->datet->Text = datetime.ToString();
 			//
 			//TODO: Add the constructor code here
 			//
 		}
-		receipt(int userId) {
+		receipt(int userId,int transaction ) {
 			InitializeComponent();
 			this->userID = userId;
+			this->transaction_amt = transaction;
 		}
 
 	protected:
@@ -43,9 +60,9 @@ namespace final {
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label5;
+
+
+
 
 
 
@@ -64,10 +81,15 @@ namespace final {
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label14;
-	private: System::Windows::Forms::Button^  button4;
+
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  box1;
+	private: System::Windows::Forms::TextBox^  box4;
+	private: System::Windows::Forms::TextBox^  box5;
+
+
+
 
 
 
@@ -98,10 +120,8 @@ namespace final {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(receipt::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -110,79 +130,44 @@ namespace final {
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->box1 = (gcnew System::Windows::Forms::TextBox());
+			this->box4 = (gcnew System::Windows::Forms::TextBox());
+			this->box5 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->datet = (gcnew System::Windows::Forms::TextBox());
+			this->box2 = (gcnew System::Windows::Forms::TextBox());
+			this->box3 = (gcnew System::Windows::Forms::TextBox());
+			this->box6 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(210, 110);
+			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->pictureBox1->Location = System::Drawing::Point(234, 117);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(339, 418);
+			this->pictureBox1->Size = System::Drawing::Size(286, 411);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Black;
-			this->label3->Location = System::Drawing::Point(263, 117);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(224, 16);
-			this->label3->TabIndex = 9;
-			this->label3->Text = L"**ATM TRANSACTION RECORD**";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(282, 133);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(34, 16);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"Date";
-			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::Black;
-			this->label5->Location = System::Drawing::Point(417, 133);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(37, 16);
-			this->label5->TabIndex = 11;
-			this->label5->Text = L"Time";
-			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label5->Click += gcnew System::EventHandler(this, &receipt::label5_Click);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
-			this->label6->Location = System::Drawing::Point(227, 186);
+			this->label6->Location = System::Drawing::Point(251, 241);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(54, 16);
+			this->label6->Size = System::Drawing::Size(69, 19);
 			this->label6->TabIndex = 21;
 			this->label6->Text = L"User_id:";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -190,14 +175,15 @@ namespace final {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::Black;
-			this->label7->Location = System::Drawing::Point(227, 214);
+			this->label7->Location = System::Drawing::Point(251, 280);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(78, 16);
+			this->label7->Size = System::Drawing::Size(92, 19);
 			this->label7->TabIndex = 22;
 			this->label7->Text = L"Transaction:";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -205,14 +191,15 @@ namespace final {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::Black;
-			this->label8->Location = System::Drawing::Point(227, 242);
+			this->label8->Location = System::Drawing::Point(251, 321);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(106, 16);
+			this->label8->Size = System::Drawing::Size(126, 19);
 			this->label8->TabIndex = 23;
 			this->label8->Text = L"Account number:";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -220,14 +207,15 @@ namespace final {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::Black;
-			this->label9->Location = System::Drawing::Point(227, 270);
+			this->label9->Location = System::Drawing::Point(251, 361);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(80, 16);
+			this->label9->Size = System::Drawing::Size(93, 19);
 			this->label9->TabIndex = 24;
 			this->label9->Text = L"Txn amount:";
 			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -235,14 +223,15 @@ namespace final {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label11->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::Color::Black;
-			this->label11->Location = System::Drawing::Point(227, 326);
+			this->label11->Location = System::Drawing::Point(251, 397);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(106, 16);
+			this->label11->Size = System::Drawing::Size(131, 19);
 			this->label11->TabIndex = 26;
 			this->label11->Text = L"Available balance:";
 			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -250,14 +239,15 @@ namespace final {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->BackColor = System::Drawing::Color::Transparent;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label12->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::Black;
-			this->label12->Location = System::Drawing::Point(234, 354);
+			this->label12->Location = System::Drawing::Point(251, 438);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(82, 16);
+			this->label12->Size = System::Drawing::Size(101, 19);
 			this->label12->TabIndex = 27;
 			this->label12->Text = L"Operator fee:";
 			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -265,11 +255,12 @@ namespace final {
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
 			this->label13->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::Color::Black;
-			this->label13->Location = System::Drawing::Point(272, 481);
+			this->label13->Location = System::Drawing::Point(284, 486);
 			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(182, 15);
@@ -280,28 +271,18 @@ namespace final {
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->BackColor = System::Drawing::Color::Transparent;
+			this->label14->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
 			this->label14->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label14->ForeColor = System::Drawing::Color::Black;
-			this->label14->Location = System::Drawing::Point(342, 497);
+			this->label14->Location = System::Drawing::Point(354, 502);
 			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(56, 15);
 			this->label14->TabIndex = 29;
 			this->label14->Text = L"CORNER";
 			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// button4
-			// 
-			this->button4->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->Location = System::Drawing::Point(513, 543);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(84, 33);
-			this->button4->TabIndex = 31;
-			this->button4->Text = L" BACK";
-			this->button4->UseVisualStyleBackColor = false;
 			// 
 			// button3
 			// 
@@ -313,10 +294,12 @@ namespace final {
 			this->button3->TabIndex = 30;
 			this->button3->Text = L"EXIT";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &receipt::button3_Click);
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(540, 12);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(180, 92);
@@ -324,23 +307,139 @@ namespace final {
 			this->pictureBox2->TabIndex = 32;
 			this->pictureBox2->TabStop = false;
 			// 
-			// textBox1
+			// box1
 			// 
-			this->textBox1->Location = System::Drawing::Point(390, 186);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(112, 22);
-			this->textBox1->TabIndex = 39;
+			this->box1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box1->Location = System::Drawing::Point(382, 241);
+			this->box1->Name = L"box1";
+			this->box1->ReadOnly = true;
+			this->box1->Size = System::Drawing::Size(127, 22);
+			this->box1->TabIndex = 39;
+			// 
+			// box4
+			// 
+			this->box4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box4->Location = System::Drawing::Point(382, 358);
+			this->box4->Name = L"box4";
+			this->box4->ReadOnly = true;
+			this->box4->Size = System::Drawing::Size(127, 22);
+			this->box4->TabIndex = 40;
+			// 
+			// box5
+			// 
+			this->box5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box5->Location = System::Drawing::Point(382, 397);
+			this->box5->Name = L"box5";
+			this->box5->ReadOnly = true;
+			this->box5->Size = System::Drawing::Size(127, 22);
+			this->box5->TabIndex = 41;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::Black;
+			this->label3->Location = System::Drawing::Point(263, 135);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(229, 19);
+			this->label3->TabIndex = 9;
+			this->label3->Text = L"ATM TRANSACTION RECORD";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Black;
+			this->label4->Location = System::Drawing::Point(345, 181);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(80, 19);
+			this->label4->TabIndex = 10;
+			this->label4->Text = L"Date/Time";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label4->Click += gcnew System::EventHandler(this, &receipt::label4_Click);
+			// 
+			// datet
+			// 
+			this->datet->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->datet->Location = System::Drawing::Point(309, 203);
+			this->datet->Name = L"datet";
+			this->datet->ReadOnly = true;
+			this->datet->Size = System::Drawing::Size(157, 22);
+			this->datet->TabIndex = 42;
+			this->datet->TextChanged += gcnew System::EventHandler(this, &receipt::datetime_TextChanged);
+			// 
+			// box2
+			// 
+			this->box2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box2->Location = System::Drawing::Point(382, 280);
+			this->box2->Name = L"box2";
+			this->box2->ReadOnly = true;
+			this->box2->Size = System::Drawing::Size(127, 22);
+			this->box2->TabIndex = 43;
+			this->box2->Text = L"Withdrawal";
+			// 
+			// box3
+			// 
+			this->box3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box3->Location = System::Drawing::Point(382, 318);
+			this->box3->Name = L"box3";
+			this->box3->ReadOnly = true;
+			this->box3->Size = System::Drawing::Size(127, 22);
+			this->box3->TabIndex = 44;
+			// 
+			// box6
+			// 
+			this->box6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box6->Location = System::Drawing::Point(382, 438);
+			this->box6->Name = L"box6";
+			this->box6->ReadOnly = true;
+			this->box6->Size = System::Drawing::Size(127, 22);
+			this->box6->TabIndex = 45;
+			this->box6->Text = L"00.00";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(241)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->label1->Location = System::Drawing::Point(240, 154);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(269, 17);
+			this->label1->TabIndex = 46;
+			this->label1->Text = L"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - \r\n";
 			// 
 			// receipt
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(732, 603);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->box6);
+			this->Controls->Add(this->box3);
+			this->Controls->Add(this->box2);
+			this->Controls->Add(this->datet);
+			this->Controls->Add(this->box5);
+			this->Controls->Add(this->box4);
+			this->Controls->Add(this->box1);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->label13);
@@ -350,7 +449,6 @@ namespace final {
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox1);
@@ -381,9 +479,9 @@ namespace final {
 			myReader = cmdDataBase->ExecuteReader();
 			if (myReader->Read()) {
 				if (myReader->HasRows) {
-					this->textBox1->Text = "" + myReader->GetInt32(0);
-					
-
+					this->box1->Text = "" + myReader->GetInt32(0);
+					this->box3->Text = "" + myReader->GetInt32(4);
+					this->box5->Text = "" + myReader->GetInt32(6);
 				}
 				else MessageBox::Show("No data found.");
 			}
@@ -394,6 +492,9 @@ namespace final {
 		{
 			MessageBox::Show(ex->Message);
 		}
+		String^ tr;
+		tr = System::Convert::ToString(transaction_amt);
+		box2->Text = tr;
 	}
 	private: System::Void textBox8_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -413,5 +514,12 @@ namespace final {
 	}
 	private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void datetime_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	Application::Exit();
+}
+};
 }
