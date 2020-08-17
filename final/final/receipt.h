@@ -17,6 +17,8 @@ namespace final {
 	{
 	public:
 		int userID;
+		int transaction_amt;
+		int availableBalacnce;
 	private: System::Windows::Forms::Label^  label3;
 	public:
 	private: System::Windows::Forms::Label^  label4;
@@ -29,8 +31,7 @@ namespace final {
 
 
 	private: System::Windows::Forms::Label^  label1;
-			 int transaction_amt;
-		receipt(void)
+	public: receipt(void)
 		{
 			InitializeComponent();
 
@@ -40,10 +41,14 @@ namespace final {
 			//TODO: Add the constructor code here
 			//
 		}
-		receipt(int userId,int transaction ) {
+	public: receipt(int userId,int transactionValue, int currBalance) {
 			InitializeComponent();
+
+			DateTime datetime = DateTime::Now;
+			this->datet->Text = datetime.ToString();
 			this->userID = userId;
-			this->transaction_amt = transaction;
+			this->transaction_amt = transactionValue;
+			this->availableBalacnce = currBalance;
 		}
 
 	protected:
@@ -155,6 +160,7 @@ namespace final {
 			this->pictureBox1->Size = System::Drawing::Size(286, 411);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &receipt::pictureBox1_Click);
 			// 
 			// label6
 			// 
@@ -470,8 +476,8 @@ namespace final {
 	private: System::Void receipt_Load(System::Object^  sender, System::EventArgs^  e) {
 		String^ constring = L"datasource=127.0.0.1; database=foratm; port=3306; username=root; password=Paper";
 		MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select * from atm where user_id=" + this->userID + ";", conDataBase);
-		MySqlDataReader^myReader;
+		MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select account_no from atm where user_id=" + this->userID + ";", conDataBase);
+		MySqlDataReader^ myReader;
 
 		try
 		{
@@ -479,9 +485,10 @@ namespace final {
 			myReader = cmdDataBase->ExecuteReader();
 			if (myReader->Read()) {
 				if (myReader->HasRows) {
-					this->box1->Text = "" + myReader->GetInt32(0);
-					this->box3->Text = "" + myReader->GetInt32(4);
-					this->box5->Text = "" + myReader->GetInt32(6);
+					this->box1->Text = "" + userID;
+					this->box3->Text = "" + myReader->GetInt32(0);
+					this->box4->Text = "" + transaction_amt;
+					this->box5->Text = "" + availableBalacnce;
 				}
 				else MessageBox::Show("No data found.");
 			}
@@ -492,9 +499,6 @@ namespace final {
 		{
 			MessageBox::Show(ex->Message);
 		}
-		String^ tr;
-		tr = System::Convert::ToString(transaction_amt);
-		box2->Text = tr;
 	}
 	private: System::Void textBox8_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
@@ -520,6 +524,8 @@ private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  
 	}
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 	Application::Exit();
+}
+private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

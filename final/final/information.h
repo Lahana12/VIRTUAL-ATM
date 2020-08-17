@@ -168,7 +168,7 @@ namespace final {
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Location = System::Drawing::Point(232, 136);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(302, 407);
+			this->pictureBox1->Size = System::Drawing::Size(302, 372);
 			this->pictureBox1->TabIndex = 25;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -219,7 +219,7 @@ namespace final {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Black;
-			this->label5->Location = System::Drawing::Point(242, 498);
+			this->label5->Location = System::Drawing::Point(242, 460);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(77, 21);
 			this->label5->TabIndex = 29;
@@ -337,7 +337,7 @@ namespace final {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Black;
-			this->label2->Location = System::Drawing::Point(242, 457);
+			this->label2->Location = System::Drawing::Point(242, 419);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(134, 21);
 			this->label2->TabIndex = 50;
@@ -348,7 +348,7 @@ namespace final {
 			this->box7->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->box7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->box7->Location = System::Drawing::Point(382, 453);
+			this->box7->Location = System::Drawing::Point(382, 415);
 			this->box7->Name = L"box7";
 			this->box7->ReadOnly = true;
 			this->box7->Size = System::Drawing::Size(134, 25);
@@ -359,7 +359,7 @@ namespace final {
 			this->box8->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->box8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->box8->Location = System::Drawing::Point(382, 497);
+			this->box8->Location = System::Drawing::Point(382, 459);
 			this->box8->Name = L"box8";
 			this->box8->ReadOnly = true;
 			this->box8->Size = System::Drawing::Size(134, 25);

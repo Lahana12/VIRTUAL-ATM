@@ -19,10 +19,14 @@ namespace final {
 	{
 	public:
 		int userID;
+		int currentBalance;
+		int latestTransac;
+		int trans;
 		withdraw(void)
 		{
 			InitializeComponent();
 			this->userID = 0;
+			this->latestTransac = 0;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -55,7 +59,7 @@ namespace final {
 	private: System::Windows::Forms::Button^  button4;
 	//private: System::Diagnostics::PerformanceCounter^  performanceCounter1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	private: System::Windows::Forms::Label^  label2;
+
 
 	private:
 		/// <summary>
@@ -79,7 +83,6 @@ namespace final {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -121,7 +124,7 @@ namespace final {
 			this->wamount->TextChanged += gcnew System::EventHandler(this, &withdraw::w_amount_TextChanged);
 			// 
 			// button1
-			// 
+			//  
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(119)),
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->CausesValidation = false;
@@ -186,16 +189,6 @@ namespace final {
 			this->pictureBox1->TabIndex = 19;
 			this->pictureBox1->TabStop = false;
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(330, 194);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(46, 17);
-			this->label2->TabIndex = 20;
-			this->label2->Text = L"label2";
-			this->label2->Click += gcnew System::EventHandler(this, &withdraw::label2_Click);
-			// 
 			// withdraw
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -203,7 +196,6 @@ namespace final {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(732, 603);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -235,18 +227,30 @@ private: System::Void withdraw_FormClosing(System::Object^  sender, System::Wind
 private: System::Void withdraw_Load(System::Object^  sender, System::EventArgs^  e) {
 
 }
-		 int trans;
+	
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ value = wamount->Text;
+	trans = System::Convert::ToInt32(value);
+
+	if ((currentBalance - trans) < 0) {
+		MessageBox::Show("Withdraw amount Overflow");
+		return; // exits the function here so that the following code does not run.
+	}
+
 	String^ constring = L"datasource=127.0.0.1; database=foratm; port=3306; username=root; password=Paper";
 	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
-	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update atm set balance=		-withh" ";", conDataBase);
+	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("update atm set balance= " + (currentBalance- trans) + " where user_id='" + userID + "';", conDataBase);
 	MySqlDataReader^myReader;
 	try
 	{
 		conDataBase->Open();
 		myReader = cmdDataBase->ExecuteReader();
 		if (myReader->RecordsAffected)
-			MessageBox::Show("Withdraw sucessful.");
+		{
+			currentBalance -= trans;
+			latestTransac = trans;
+			MessageBox::Show("Withdraw successful. New balance: " + currentBalance);
+		}
 		else
 			MessageBox::Show("There was problem updating your data.");
 	}
@@ -257,14 +261,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ value = wamount->Text;
-		trans = System::Convert::ToInt32(value);
-
-		this->label2->Text = value;
-		this->Hide();
-		receipt^ re = gcnew receipt(userID, trans);
-		re->ShowDialog();
-		this->Show();
+	if (latestTransac == 0) {
+		MessageBox::Show("Make a transaction first.");
+		return;
+	}
+	auto rec = gcnew receipt(userID, latestTransac, currentBalance);
+	rec->ShowDialog();
 	}
 private: System::Void w_amount_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	

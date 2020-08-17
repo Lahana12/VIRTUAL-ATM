@@ -280,9 +280,25 @@ private: System::Void withdraw_Click(System::Object^  sender, System::EventArgs^
 	this->Hide();
 	// withdraw^ wd = gcnew withdraw(userID);
 	// wd->ShowDialog();
-	final::withdraw wd;
-	wd.userID = this->userID;
-	wd.ShowDialog();
+	String^ constring = L"datasource=127.0.0.1; database=foratm; port=3306; username=root; password=Paper";
+	MySqlConnection^ conDataBase = gcnew MySqlConnection(constring);
+	MySqlCommand^ cmdDataBase = gcnew MySqlCommand("select balance from atm where user_id ='" + userID + "';", conDataBase);
+	MySqlDataReader^ myReader;
+
+	try {
+		conDataBase->Open();
+		myReader = cmdDataBase->ExecuteReader();
+		if (myReader->HasRows && myReader->Read()) {
+			final::withdraw wd;
+			wd.userID = this->userID;
+			wd.currentBalance = myReader->GetInt32(0);
+			wd.ShowDialog();
+		}
+		else MessageBox::Show("Could not connect to database at the moment.");
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 	this->Show();
 }
 private: System::Void balance_check_Click(System::Object^  sender, System::EventArgs^  e) {
