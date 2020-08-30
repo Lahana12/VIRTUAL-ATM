@@ -233,7 +233,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	trans = System::Convert::ToInt32(value);
 
 	if ((currentBalance - trans) < 0) {
-		MessageBox::Show("Withdraw amount Overflow");
+		MessageBox::Show("Entered amount exceeded the available balance.");
 		return; // exits the function here so that the following code does not run.
 	}
 
@@ -249,10 +249,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		{
 			currentBalance -= trans;
 			latestTransac = trans;
-			MessageBox::Show("Withdraw successful. New balance: " + currentBalance);
+			MessageBox::Show(" Withdraw successful. Your new balance is " + currentBalance);
 		}
 		else
-			MessageBox::Show("There was problem updating your data.");
+			MessageBox::Show( "There was problem updating your data." );
 	}
 	catch (Exception^ex)
 	{
@@ -262,16 +262,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (latestTransac == 0) {
-		MessageBox::Show("Make a transaction first.");
+		MessageBox::Show(" You need to make a transaction first. ");
 		return;
 	}
 	auto rec = gcnew receipt(userID, latestTransac, currentBalance);
 	rec->ShowDialog();
 	}
 private: System::Void w_amount_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	
-	
-	
+		
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();

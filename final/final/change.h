@@ -43,15 +43,9 @@ namespace final {
 	private: System::Windows::Forms::Button^  button4;
 	protected:
 	private: System::Windows::Forms::Button^  button3;
-
-
 	private: System::Windows::Forms::Label^  label6;
-
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  pin;
-
-
-
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 
@@ -203,7 +197,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		conDataBase->Open();
 		myReader = cmdDataBase->ExecuteReader();
 		if (myReader->RecordsAffected)
-			MessageBox::Show("Pin change successful.");
+			MessageBox::Show("Your pin change was successful.");
 		else
 			MessageBox::Show("There was problem changing your pin.");
 	}

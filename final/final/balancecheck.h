@@ -50,12 +50,6 @@ namespace final {
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  current;
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.

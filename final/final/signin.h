@@ -37,62 +37,17 @@ namespace final {
 			}
 		}
 	private: System::Windows::Forms::Button^  button1;
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Label^  label6;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::TextBox^  lname;
 	private: System::Windows::Forms::TextBox^  acc_no;
-
-
-
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  fname;
-
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  dob;
-
 	private: System::Windows::Forms::Label^  label2;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	protected:
 
 	private:
@@ -307,7 +262,7 @@ namespace final {
 				pa->ShowDialog();
 			}
 			else
-				MessageBox::Show("Invalid entry. The account doesn't exist.");
+				MessageBox::Show(" Invalid entry. The account doesn't exist. ");
 
 		}
 		catch (Exception^ex)
