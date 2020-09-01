@@ -5,7 +5,6 @@
 #include "information.h"
 #include "change.h"
 #include "withdraw.h"
-
 namespace final {
 
 	using namespace System;
