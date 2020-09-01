@@ -164,6 +164,8 @@ namespace final {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pw);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"password";
 			this->Text = L"password";
 			this->Load += gcnew System::EventHandler(this, &password::password_Load);

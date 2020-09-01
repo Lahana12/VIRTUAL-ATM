@@ -46,18 +46,13 @@ namespace final {
 	private: System::Windows::Forms::TextBox^  password_txt;
 	private: System::Windows::Forms::Label^  username_lbl;
 	private: System::Windows::Forms::Label^  password_lbl;
-
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Label^  label1;
-
-
-
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
-
 
 	protected:
 
@@ -260,6 +255,7 @@ namespace final {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->panel1);
 			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"loginform";
 			this->Text = L"loginform";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginform::loginform_FormClosing);
