@@ -317,30 +317,36 @@ namespace final {
 			// 
 			this->box1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box1->Location = System::Drawing::Point(382, 241);
 			this->box1->Name = L"box1";
 			this->box1->ReadOnly = true;
-			this->box1->Size = System::Drawing::Size(127, 22);
+			this->box1->Size = System::Drawing::Size(127, 24);
 			this->box1->TabIndex = 39;
 			// 
 			// box4
 			// 
 			this->box4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box4->Location = System::Drawing::Point(382, 358);
 			this->box4->Name = L"box4";
 			this->box4->ReadOnly = true;
-			this->box4->Size = System::Drawing::Size(127, 22);
+			this->box4->Size = System::Drawing::Size(127, 24);
 			this->box4->TabIndex = 40;
 			// 
 			// box5
 			// 
 			this->box5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box5->Location = System::Drawing::Point(382, 397);
 			this->box5->Name = L"box5";
 			this->box5->ReadOnly = true;
-			this->box5->Size = System::Drawing::Size(127, 22);
+			this->box5->Size = System::Drawing::Size(127, 24);
 			this->box5->TabIndex = 41;
 			// 
 			// label3
@@ -380,10 +386,12 @@ namespace final {
 			// 
 			this->datet->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->datet->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->datet->Location = System::Drawing::Point(309, 203);
 			this->datet->Name = L"datet";
 			this->datet->ReadOnly = true;
-			this->datet->Size = System::Drawing::Size(157, 22);
+			this->datet->Size = System::Drawing::Size(157, 24);
 			this->datet->TabIndex = 42;
 			this->datet->TextChanged += gcnew System::EventHandler(this, &receipt::datetime_TextChanged);
 			// 
@@ -391,10 +399,12 @@ namespace final {
 			// 
 			this->box2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box2->Location = System::Drawing::Point(382, 280);
 			this->box2->Name = L"box2";
 			this->box2->ReadOnly = true;
-			this->box2->Size = System::Drawing::Size(127, 22);
+			this->box2->Size = System::Drawing::Size(127, 24);
 			this->box2->TabIndex = 43;
 			this->box2->Text = L"Withdrawal";
 			// 
@@ -402,20 +412,24 @@ namespace final {
 			// 
 			this->box3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box3->Location = System::Drawing::Point(382, 318);
 			this->box3->Name = L"box3";
 			this->box3->ReadOnly = true;
-			this->box3->Size = System::Drawing::Size(127, 22);
+			this->box3->Size = System::Drawing::Size(127, 24);
 			this->box3->TabIndex = 44;
 			// 
 			// box6
 			// 
 			this->box6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(222)), static_cast<System::Int32>(static_cast<System::Byte>(233)),
 				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->box6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->box6->Location = System::Drawing::Point(382, 438);
 			this->box6->Name = L"box6";
 			this->box6->ReadOnly = true;
-			this->box6->Size = System::Drawing::Size(127, 22);
+			this->box6->Size = System::Drawing::Size(127, 24);
 			this->box6->TabIndex = 45;
 			this->box6->Text = L"00.00";
 			// 

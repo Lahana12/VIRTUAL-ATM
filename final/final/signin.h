@@ -84,7 +84,7 @@ namespace final {
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(119)),
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(471, 411);
+			this->button1->Location = System::Drawing::Point(498, 414);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(84, 33);
 			this->button1->TabIndex = 0;
@@ -108,13 +108,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
 			this->label6->Location = System::Drawing::Point(-2, 108);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(315, 22);
+			this->label6->Size = System::Drawing::Size(377, 27);
 			this->label6->TabIndex = 27;
 			this->label6->Text = L"Sign in                                                  ";
 			// 
@@ -131,28 +131,32 @@ namespace final {
 			// 
 			// lname
 			// 
-			this->lname->Location = System::Drawing::Point(339, 259);
+			this->lname->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lname->Location = System::Drawing::Point(366, 259);
 			this->lname->Name = L"lname";
-			this->lname->Size = System::Drawing::Size(216, 22);
+			this->lname->Size = System::Drawing::Size(216, 27);
 			this->lname->TabIndex = 47;
 			// 
 			// acc_no
 			// 
-			this->acc_no->Location = System::Drawing::Point(339, 315);
+			this->acc_no->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->acc_no->Location = System::Drawing::Point(366, 315);
 			this->acc_no->Name = L"acc_no";
-			this->acc_no->Size = System::Drawing::Size(216, 22);
+			this->acc_no->Size = System::Drawing::Size(216, 27);
 			this->acc_no->TabIndex = 46;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(194, 314);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(144, 22);
+			this->label4->Size = System::Drawing::Size(174, 26);
 			this->label4->TabIndex = 45;
 			this->label4->Text = L"Account number:";
 			// 
@@ -160,52 +164,56 @@ namespace final {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(194, 259);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(95, 22);
+			this->label3->Size = System::Drawing::Size(112, 26);
 			this->label3->TabIndex = 44;
 			this->label3->Text = L"Last name:";
 			// 
 			// fname
 			// 
-			this->fname->Location = System::Drawing::Point(339, 206);
+			this->fname->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->fname->Location = System::Drawing::Point(366, 206);
 			this->fname->Name = L"fname";
-			this->fname->Size = System::Drawing::Size(216, 22);
+			this->fname->Size = System::Drawing::Size(216, 27);
 			this->fname->TabIndex = 43;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(194, 206);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 22);
+			this->label1->Size = System::Drawing::Size(116, 26);
 			this->label1->TabIndex = 42;
 			this->label1->Text = L"First name:";
 			// 
 			// dob
 			// 
-			this->dob->Location = System::Drawing::Point(339, 368);
+			this->dob->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dob->Location = System::Drawing::Point(366, 368);
 			this->dob->Name = L"dob";
-			this->dob->Size = System::Drawing::Size(216, 22);
+			this->dob->Size = System::Drawing::Size(216, 27);
 			this->dob->TabIndex = 49;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(194, 367);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(116, 22);
+			this->label2->Size = System::Drawing::Size(136, 26);
 			this->label2->TabIndex = 48;
 			this->label2->Text = L"Date of birth:";
 			// 

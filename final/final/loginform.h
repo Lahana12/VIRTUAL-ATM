@@ -98,9 +98,9 @@ namespace final {
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(119)),
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(49, 181);
+			this->button1->Location = System::Drawing::Point(61, 210);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(93, 29);
+			this->button1->Size = System::Drawing::Size(93, 31);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"LOGIN";
 			this->button1->UseVisualStyleBackColor = false;
@@ -109,34 +109,36 @@ namespace final {
 			// username_txt
 			// 
 			this->username_txt->BackColor = System::Drawing::Color::DarkGray;
-			this->username_txt->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->username_txt->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->username_txt->ForeColor = System::Drawing::Color::White;
-			this->username_txt->Location = System::Drawing::Point(22, 90);
+			this->username_txt->Location = System::Drawing::Point(23, 101);
 			this->username_txt->Name = L"username_txt";
-			this->username_txt->Size = System::Drawing::Size(148, 22);
+			this->username_txt->Size = System::Drawing::Size(168, 27);
 			this->username_txt->TabIndex = 1;
 			this->username_txt->TextChanged += gcnew System::EventHandler(this, &loginform::username_txt_TextChanged);
 			// 
 			// password_txt
 			// 
 			this->password_txt->BackColor = System::Drawing::Color::DarkGray;
-			this->password_txt->Font = (gcnew System::Drawing::Font(L"Times New Roman", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->password_txt->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->password_txt->ForeColor = System::Drawing::Color::White;
-			this->password_txt->Location = System::Drawing::Point(22, 144);
+			this->password_txt->Location = System::Drawing::Point(23, 166);
 			this->password_txt->Name = L"password_txt";
 			this->password_txt->PasswordChar = '*';
-			this->password_txt->Size = System::Drawing::Size(148, 22);
+			this->password_txt->Size = System::Drawing::Size(168, 27);
 			this->password_txt->TabIndex = 2;
 			this->password_txt->TextChanged += gcnew System::EventHandler(this, &loginform::password_txt_TextChanged);
 			// 
 			// username_lbl
 			// 
 			this->username_lbl->AutoSize = true;
-			this->username_lbl->Location = System::Drawing::Point(19, 70);
+			this->username_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->username_lbl->Location = System::Drawing::Point(19, 78);
 			this->username_lbl->Name = L"username_lbl";
-			this->username_lbl->Size = System::Drawing::Size(57, 17);
+			this->username_lbl->Size = System::Drawing::Size(67, 20);
 			this->username_lbl->TabIndex = 3;
 			this->username_lbl->Text = L"User_id";
 			this->username_lbl->Click += gcnew System::EventHandler(this, &loginform::username_lbl_Click);
@@ -144,9 +146,11 @@ namespace final {
 			// password_lbl
 			// 
 			this->password_lbl->AutoSize = true;
-			this->password_lbl->Location = System::Drawing::Point(19, 124);
+			this->password_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->password_lbl->Location = System::Drawing::Point(19, 143);
 			this->password_lbl->Name = L"password_lbl";
-			this->password_lbl->Size = System::Drawing::Size(69, 17);
+			this->password_lbl->Size = System::Drawing::Size(83, 20);
 			this->password_lbl->TabIndex = 4;
 			this->password_lbl->Text = L"Password";
 			this->password_lbl->Click += gcnew System::EventHandler(this, &loginform::password_lbl_Click);
@@ -165,7 +169,7 @@ namespace final {
 			this->panel1->Location = System::Drawing::Point(272, 193);
 			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(198, 222);
+			this->panel1->Size = System::Drawing::Size(212, 258);
 			this->panel1->TabIndex = 10;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &loginform::panel1_Paint);
 			// 
@@ -186,19 +190,19 @@ namespace final {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(47, 39);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(107, 22);
+			this->label1->Size = System::Drawing::Size(130, 27);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"User Log in ";
 			this->label1->Click += gcnew System::EventHandler(this, &loginform::label1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(314, 441);
+			this->button2->Location = System::Drawing::Point(314, 478);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(128, 32);
 			this->button2->TabIndex = 12;
@@ -213,7 +217,7 @@ namespace final {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(359, 419);
+			this->label3->Location = System::Drawing::Point(359, 456);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(32, 19);
@@ -236,9 +240,9 @@ namespace final {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(342, 162);
+			this->pictureBox2->Location = System::Drawing::Point(342, 147);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(58, 56);
+			this->pictureBox2->Size = System::Drawing::Size(72, 71);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 43;
 			this->pictureBox2->TabStop = false;

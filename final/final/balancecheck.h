@@ -99,13 +99,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
 			this->label6->Location = System::Drawing::Point(0, 89);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(333, 22);
+			this->label6->Size = System::Drawing::Size(404, 27);
 			this->label6->TabIndex = 20;
 			this->label6->Text = L"Balance Check                                         ";
 			// 
@@ -113,21 +113,24 @@ namespace final {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(167, 282);
+			this->label1->Location = System::Drawing::Point(146, 285);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(199, 22);
+			this->label1->Size = System::Drawing::Size(241, 27);
 			this->label1->TabIndex = 21;
 			this->label1->Text = L"Your current balance is:";
+			this->label1->Click += gcnew System::EventHandler(this, &balancecheck::label1_Click);
 			// 
 			// current
 			// 
-			this->current->Location = System::Drawing::Point(372, 282);
+			this->current->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->current->Location = System::Drawing::Point(393, 286);
 			this->current->Name = L"current";
 			this->current->ReadOnly = true;
-			this->current->Size = System::Drawing::Size(183, 22);
+			this->current->Size = System::Drawing::Size(214, 27);
 			this->current->TabIndex = 25;
 			this->current->TextChanged += gcnew System::EventHandler(this, &balancecheck::current_TextChanged);
 			// 
@@ -191,6 +194,8 @@ private: System::Void balance_check_SelectedIndexChanged(System::Object^  sender
 private: System::Void richTextBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void current_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

@@ -101,13 +101,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
 			this->label6->Location = System::Drawing::Point(0, 119);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(343, 22);
+			this->label6->Size = System::Drawing::Size(417, 27);
 			this->label6->TabIndex = 20;
 			this->label6->Text = L"Change your pin                                         ";
 			// 
@@ -115,20 +115,22 @@ namespace final {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(172, 269);
+			this->label3->Location = System::Drawing::Point(178, 268);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(126, 22);
+			this->label3->Size = System::Drawing::Size(153, 27);
 			this->label3->TabIndex = 25;
 			this->label3->Text = L"Enter new pin:";
 			// 
 			// pin
 			// 
+			this->pin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->pin->Location = System::Drawing::Point(337, 269);
 			this->pin->Name = L"pin";
-			this->pin->Size = System::Drawing::Size(216, 22);
+			this->pin->Size = System::Drawing::Size(216, 27);
 			this->pin->TabIndex = 28;
 			// 
 			// button1

@@ -90,13 +90,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
 			this->label6->Location = System::Drawing::Point(3, 123);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(307, 22);
+			this->label6->Size = System::Drawing::Size(370, 27);
 			this->label6->TabIndex = 12;
 			this->label6->Text = L"Cash Withdrawal                                \r\n";
 			this->label6->Click += gcnew System::EventHandler(this, &withdraw::label6_Click);
@@ -105,31 +105,33 @@ namespace final {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(92, 261);
+			this->label1->Location = System::Drawing::Point(39, 255);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(324, 22);
+			this->label1->Size = System::Drawing::Size(401, 27);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Enter the amount you want to withdraw:";
 			// 
 			// wamount
 			// 
-			this->wamount->Location = System::Drawing::Point(421, 260);
+			this->wamount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->wamount->Location = System::Drawing::Point(435, 255);
 			this->wamount->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->wamount->Name = L"wamount";
-			this->wamount->Size = System::Drawing::Size(216, 22);
+			this->wamount->Size = System::Drawing::Size(216, 27);
 			this->wamount->TabIndex = 14;
 			this->wamount->TextChanged += gcnew System::EventHandler(this, &withdraw::w_amount_TextChanged);
 			// 
 			// button1
-			//  
+			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(119)),
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
 			this->button1->CausesValidation = false;
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(485, 306);
+			this->button1->Location = System::Drawing::Point(499, 296);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(152, 38);
@@ -142,7 +144,7 @@ namespace final {
 			// 
 			this->button2->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Location = System::Drawing::Point(485, 350);
+			this->button2->Location = System::Drawing::Point(499, 349);
 			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 27);

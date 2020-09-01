@@ -79,9 +79,11 @@ namespace final {
 			// 
 			// pw
 			// 
+			this->pw->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->pw->Location = System::Drawing::Point(322, 259);
 			this->pw->Name = L"pw";
-			this->pw->Size = System::Drawing::Size(218, 22);
+			this->pw->Size = System::Drawing::Size(218, 27);
 			this->pw->TabIndex = 38;
 			this->pw->TextChanged += gcnew System::EventHandler(this, &password::pw_TextChanged);
 			// 
@@ -114,12 +116,12 @@ namespace final {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(190, 259);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(126, 22);
+			this->label1->Size = System::Drawing::Size(153, 27);
 			this->label1->TabIndex = 42;
 			this->label1->Text = L"Enter new pin:";
 			this->label1->Click += gcnew System::EventHandler(this, &password::label1_Click);
@@ -128,13 +130,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
-			this->label6->Location = System::Drawing::Point(-1, 117);
+			this->label6->Location = System::Drawing::Point(1, 107);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(406, 22);
+			this->label6->Size = System::Drawing::Size(490, 27);
 			this->label6->TabIndex = 43;
 			this->label6->Text = L"Password entry for ATM use                                  ";
 			// 

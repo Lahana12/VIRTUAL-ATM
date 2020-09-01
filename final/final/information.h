@@ -128,13 +128,13 @@ namespace final {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
 			this->label6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label6.Image")));
 			this->label6->Location = System::Drawing::Point(-1, 100);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(301, 22);
+			this->label6->Size = System::Drawing::Size(370, 27);
 			this->label6->TabIndex = 20;
 			this->label6->Text = L"Account Information                          ";
 			// 
@@ -266,68 +266,68 @@ namespace final {
 			// box1
 			// 
 			this->box1->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box1->Location = System::Drawing::Point(382, 160);
 			this->box1->Name = L"box1";
 			this->box1->ReadOnly = true;
-			this->box1->Size = System::Drawing::Size(134, 25);
+			this->box1->Size = System::Drawing::Size(134, 27);
 			this->box1->TabIndex = 43;
 			this->box1->TextChanged += gcnew System::EventHandler(this, &information::box1_TextChanged);
 			// 
 			// box2
 			// 
 			this->box2->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box2->Location = System::Drawing::Point(382, 203);
 			this->box2->Name = L"box2";
 			this->box2->ReadOnly = true;
-			this->box2->Size = System::Drawing::Size(134, 25);
+			this->box2->Size = System::Drawing::Size(134, 27);
 			this->box2->TabIndex = 44;
 			// 
 			// box6
 			// 
 			this->box6->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box6->Location = System::Drawing::Point(382, 367);
 			this->box6->Name = L"box6";
 			this->box6->ReadOnly = true;
-			this->box6->Size = System::Drawing::Size(134, 25);
+			this->box6->Size = System::Drawing::Size(134, 27);
 			this->box6->TabIndex = 45;
 			// 
 			// box4
 			// 
 			this->box4->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box4->Location = System::Drawing::Point(382, 283);
 			this->box4->Name = L"box4";
 			this->box4->ReadOnly = true;
-			this->box4->Size = System::Drawing::Size(134, 25);
+			this->box4->Size = System::Drawing::Size(134, 27);
 			this->box4->TabIndex = 46;
 			// 
 			// box3
 			// 
 			this->box3->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box3->Location = System::Drawing::Point(382, 242);
 			this->box3->Name = L"box3";
 			this->box3->ReadOnly = true;
-			this->box3->Size = System::Drawing::Size(134, 25);
+			this->box3->Size = System::Drawing::Size(134, 27);
 			this->box3->TabIndex = 47;
 			// 
 			// box5
 			// 
 			this->box5->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box5->Location = System::Drawing::Point(382, 329);
 			this->box5->Name = L"box5";
 			this->box5->ReadOnly = true;
-			this->box5->Size = System::Drawing::Size(134, 25);
+			this->box5->Size = System::Drawing::Size(134, 27);
 			this->box5->TabIndex = 49;
 			// 
 			// label2
@@ -346,23 +346,23 @@ namespace final {
 			// box7
 			// 
 			this->box7->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box7->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box7->Location = System::Drawing::Point(382, 415);
 			this->box7->Name = L"box7";
 			this->box7->ReadOnly = true;
-			this->box7->Size = System::Drawing::Size(134, 25);
+			this->box7->Size = System::Drawing::Size(134, 27);
 			this->box7->TabIndex = 51;
 			// 
 			// box8
 			// 
 			this->box8->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->box8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->box8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->box8->Location = System::Drawing::Point(382, 459);
 			this->box8->Name = L"box8";
 			this->box8->ReadOnly = true;
-			this->box8->Size = System::Drawing::Size(134, 25);
+			this->box8->Size = System::Drawing::Size(134, 27);
 			this->box8->TabIndex = 53;
 			// 
 			// label10
