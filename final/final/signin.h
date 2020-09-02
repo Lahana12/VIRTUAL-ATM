@@ -156,7 +156,7 @@ namespace final {
 			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(194, 314);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(174, 26);
+			this->label4->Size = System::Drawing::Size(163, 25);
 			this->label4->TabIndex = 45;
 			this->label4->Text = L"Account number:";
 			// 
@@ -169,7 +169,7 @@ namespace final {
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(194, 259);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(112, 26);
+			this->label3->Size = System::Drawing::Size(107, 25);
 			this->label3->TabIndex = 44;
 			this->label3->Text = L"Last name:";
 			// 
@@ -191,7 +191,7 @@ namespace final {
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(194, 206);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 26);
+			this->label1->Size = System::Drawing::Size(110, 25);
 			this->label1->TabIndex = 42;
 			this->label1->Text = L"First name:";
 			// 
@@ -213,7 +213,7 @@ namespace final {
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(194, 367);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(136, 26);
+			this->label2->Size = System::Drawing::Size(130, 25);
 			this->label2->TabIndex = 48;
 			this->label2->Text = L"Date of birth:";
 			// 
@@ -237,6 +237,8 @@ namespace final {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"signin";
 			this->Text = L"signin";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &signin::signin_FormClosing);

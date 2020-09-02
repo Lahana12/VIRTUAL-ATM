@@ -473,6 +473,8 @@ namespace final {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox1);
 			this->DoubleBuffered = true;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"receipt";
 			this->Text = L"receipt";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &receipt::receipt_FormClosing);

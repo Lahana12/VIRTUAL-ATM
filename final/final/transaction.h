@@ -5,7 +5,6 @@
 #include "information.h"
 #include "change.h"
 #include "withdraw.h"
-
 namespace final {
 
 	using namespace System;
@@ -153,7 +152,7 @@ namespace final {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(207, 319);
+			this->label1->Location = System::Drawing::Point(200, 319);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(137, 21);
@@ -260,6 +259,8 @@ namespace final {
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->balance_check);
 			this->Controls->Add(this->withdraw);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"transaction";
 			this->Text = L"Select a transaction                                                   ";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &transaction::transaction_FormClosing);

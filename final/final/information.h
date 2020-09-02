@@ -406,6 +406,8 @@ namespace final {
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label6);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"information";
 			this->Text = L"information";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &information::information_FormClosing);

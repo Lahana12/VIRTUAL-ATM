@@ -207,6 +207,8 @@ namespace final {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label6);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"withdraw";
 			this->Text = L"withdraw";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &withdraw::withdraw_FormClosing);
