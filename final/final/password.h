@@ -104,9 +104,9 @@ namespace final {
 			// 
 			this->button3->BackColor = System::Drawing::Color::IndianRed;
 			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Location = System::Drawing::Point(621, 547);
+			this->button3->Location = System::Drawing::Point(614, 547);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(84, 33);
+			this->button3->Size = System::Drawing::Size(91, 33);
 			this->button3->TabIndex = 41;
 			this->button3->Text = L"EXIT";
 			this->button3->UseVisualStyleBackColor = false;

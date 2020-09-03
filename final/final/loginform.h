@@ -161,10 +161,10 @@ namespace final {
 			this->panel1->Controls->Add(this->username_lbl);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->password_txt);
-			this->panel1->Location = System::Drawing::Point(272, 193);
+			this->panel1->Location = System::Drawing::Point(264, 193);
 			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(212, 258);
+			this->panel1->Size = System::Drawing::Size(221, 258);
 			this->panel1->TabIndex = 10;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &loginform::panel1_Paint);
 			// 
