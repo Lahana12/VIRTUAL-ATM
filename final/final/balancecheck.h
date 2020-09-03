@@ -50,6 +50,7 @@ namespace final {
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  current;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -69,6 +70,8 @@ namespace final {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->current = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button4
@@ -134,6 +137,17 @@ namespace final {
 			this->current->TabIndex = 25;
 			this->current->TextChanged += gcnew System::EventHandler(this, &balancecheck::current_TextChanged);
 			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(532, 12);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(188, 92);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 43;
+			this->pictureBox3->TabStop = false;
+			// 
 			// balancecheck
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -141,6 +155,7 @@ namespace final {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(732, 603);
+			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->current);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -150,6 +165,7 @@ namespace final {
 			this->Text = L"balancecheck";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &balancecheck::balancecheck_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &balancecheck::balancecheck_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
