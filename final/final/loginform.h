@@ -301,7 +301,6 @@ namespace final {
 		{
 			MessageBox::Show(ex->Message);
 		}
-
 	}
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
